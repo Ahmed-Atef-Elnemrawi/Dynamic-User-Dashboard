@@ -1,0 +1,29 @@
+<div
+  class="card  w-full min-w-60 h-24 px-3 py-4 rounded-sm bg-primary-800 shadow-2xl shadow-background-950 font-bodyFont flex flex-col place-content-stretch"
+>
+  <div
+    class="card-header border-b-1 border-accent-900 flex flex-row space-x-3 place-items-center md:space-x-2 lg:space-x-3"
+  >
+    <a
+    [routerLink]="['/users', user?.id]"
+    class="card-avatar block w-fit h-fit rounded-full"
+    >
+      <img
+        class="size-14 md:size-12 lg:size-14 block rounded-full border-none outline-none shadow-sm shadow-background-800"
+        [src]="user?.avatar"
+      />
+    </a>
+    <div class="card-title text-base sm:text-sm leading-snug">
+      <a
+      [routerLink]="['/users', user?.id]"
+      class="font-bodyFont capitalize hover:text-text-500"
+      >
+        {{ user?.last_name + "," + " " + user?.first_name }}
+      </a>
+      <p class="font-bodyFont">{{user?.email}}</p>
+    </div>
+  </div>
+  <div class="card-body font-bodyFont text-lg">
+    <p>{{ '' }}</p>
+  </div>
+</div>
