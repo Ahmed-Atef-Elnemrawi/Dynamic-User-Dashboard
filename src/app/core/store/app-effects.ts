@@ -15,7 +15,7 @@ export class AppEffects {
   private actions = inject(Actions);
   private store = inject(Store<State>);
   private currentPage = this.store.selectSignal(selectCurrentPage);
-
+//
   searchUser$ = createEffect(() =>
     this.actions.pipe(
       ofType(appActions.searchUser),
