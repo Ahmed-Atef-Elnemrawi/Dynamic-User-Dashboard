@@ -55,7 +55,7 @@ import { CustomEase } from 'gsap/all';
 
     <loading-bar
       class="fixed bottom-1/2 sm:bottom-[calc(33.33%-10px)]"
-      *ngIf="isLoading$ | async"
+      *ngIf="isLoading$ | async;"
     />
     <user-list-paginator
       class="fixed bottom-0 sm:bottom-20 right-0 left-0"
@@ -95,22 +95,33 @@ export class UserListComponent implements OnInit {
     this.store.dispatch(getUsers({ page }));
   }
 
-  // animate next function
   onNext() {
+    this.animateNextNavigation();
+  }
+
+  onPrevious() {
+    this.animatePreviousNavigation();
+  }
+
+  private animateNextNavigation(){
     const container = this.el.nativeElement.querySelector('#container');
     gsap.from(container, {
       translateX: '100%',
-      duration: 1,
+      opacity:0,
+      scale:.8,
+      duration: 1.6,
       ease:  CustomEase.create("custom", "M0,0 C0.61,1 0.88,1 1,1 ")
     });
-  }
 
-  // animate previous function
-  onPrevious() {
+  }
+  
+  private animatePreviousNavigation(){
     const container = this.el.nativeElement.querySelector('#container');
     gsap.from(container, {
       translateX: '-100%',
-      duration: 1,
+      opacity:0,
+      scale:.8,
+      duration: 1.6,
       ease:  CustomEase.create("custom", "M0,0 C0.61,1 0.88,1 1,1 ")
     });
   }
