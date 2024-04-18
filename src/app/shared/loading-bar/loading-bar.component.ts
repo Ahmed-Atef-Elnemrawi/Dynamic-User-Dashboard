@@ -16,8 +16,8 @@ import { Component } from "@angular/core";
   .loader,
   .before,
   .after {
-    width: 1rem;
-    height: 1rem;
+    width: .8rem;
+    height: .8rem;
     animation-fill-mode: both;
     animation: bblFadInOut 1.8s infinite ease-in-out;
     @apply shadow-2xl shadow-background-950 rounded-sm
